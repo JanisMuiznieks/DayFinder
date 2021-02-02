@@ -150,7 +150,7 @@
                         <barButtonItem key="leftBarButtonItem" image="info.circle.fill" catalog="system" id="qqA-7c-fdq">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="WDd-cB-eNQ" kind="show" id="cHt-w6-WY9"/>
+                                <segue destination="WDd-cB-eNQ" kind="show" identifier="dayFinder" id="cHt-w6-WY9"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="moon.circle.fill" catalog="system" id="IJt-Xh-aWc">
@@ -172,26 +172,58 @@
             </objects>
             <point key="canvasLocation" x="1050.4000000000001" y="94.002998500749626"/>
         </scene>
-        <!--View Controller-->
+        <!--App Info View Controller-->
         <scene sceneID="uxp-1D-ZXQ">
             <objects>
-                <viewController id="WDd-cB-eNQ" sceneMemberID="viewController">
+                <viewController id="WDd-cB-eNQ" customClass="AppInfoViewController" customModule="DayFinderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F2I-xr-rK0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Info" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrG-yR-hDp">
+                                <rect key="frame" x="61.5" y="305" width="252" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="3jG-ZD-dla"/>
+                                    <constraint firstAttribute="width" constant="252" id="eDD-lN-2re"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Desc." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dw0-Lh-ocv">
+                                <rect key="frame" x="61.5" y="577" width="252" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="MXo-ux-0Ey"/>
+                                    <constraint firstAttribute="width" constant="252" id="bqM-bs-baM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="VoL-Vu-ovT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Dw0-Lh-ocv" firstAttribute="centerX" secondItem="VoL-Vu-ovT" secondAttribute="centerX" id="WAw-CH-Ajq"/>
+                            <constraint firstItem="Dw0-Lh-ocv" firstAttribute="top" secondItem="WrG-yR-hDp" secondAttribute="bottom" constant="215" id="hSt-70-Yqy"/>
+                            <constraint firstItem="WrG-yR-hDp" firstAttribute="centerX" secondItem="VoL-Vu-ovT" secondAttribute="centerX" id="pVd-sV-3Oo"/>
+                            <constraint firstItem="WrG-yR-hDp" firstAttribute="top" secondItem="VoL-Vu-ovT" secondAttribute="top" constant="209" id="rEq-Zm-41O"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d0g-01-W7y"/>
+                    <connections>
+                        <outlet property="appDescLabel" destination="Dw0-Lh-ocv" id="dl4-2t-XqZ"/>
+                        <outlet property="appInfoLabel" destination="WrG-yR-hDp" id="M3X-6z-loZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8eq-3r-w1w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1051" y="835"/>
+            <point key="canvasLocation" x="1050.4000000000001" y="834.33283358320841"/>
         </scene>
-        <!--View Controller-->
+        <!--Appearence View Controller-->
         <scene sceneID="USJ-uI-A2U">
             <objects>
-                <viewController id="8KU-nE-6aI" sceneMemberID="viewController">
+                <viewController id="8KU-nE-6aI" customClass="AppearenceViewController" customModule="DayFinderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xop-no-02a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,7 +243,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f69-1P-Q2r">
                                         <rect key="frame" x="0.0" y="180" width="290" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="systemFillColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="dOy-kf-HPY"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="290" id="ukU-Cg-6Oo"/>
@@ -220,9 +252,23 @@
                                         <state key="normal" title="Open settings">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="openSettingsButtonTap:" destination="8KU-nE-6aI" eventType="touchUpInside" id="R1i-Cr-cbF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExZ-c0-oPF">
+                                <rect key="frame" x="299" y="44" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="multiply.square" catalog="system"/>
+                                <connections>
+                                    <action selector="closeButtonTap:" destination="8KU-nE-6aI" eventType="touchUpInside" id="HA5-Ht-wVy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Pj-zp-q1Z"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
@@ -231,6 +277,9 @@
                             <constraint firstItem="W8R-W6-LYd" firstAttribute="centerY" secondItem="xop-no-02a" secondAttribute="centerY" id="zcQ-Dw-I8J"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textLabel" destination="5Ot-Jd-Cmq" id="VUi-h6-ycK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cli-RT-ndI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -265,6 +314,7 @@
     <resources>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="moon.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="multiply.square" catalog="system" width="128" height="114"/>
         <image name="night" width="658" height="1432"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
